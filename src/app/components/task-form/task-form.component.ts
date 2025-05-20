@@ -5,6 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-task-form',
@@ -16,7 +17,8 @@ import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
     MatDatepickerModule,
     MatInputModule,
     MatFormFieldModule,
-    NgxMatTimepickerModule
+    NgxMatTimepickerModule,
+    MatDialogModule
   ]
 })
 export class TaskFormComponent {

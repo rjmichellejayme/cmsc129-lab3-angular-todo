@@ -12,6 +12,8 @@ import { SnackbarService } from '../../services/snackbar.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSnackbarComponent } from '../mat-snackbar/mat-snackbar.component';
 import { SortTasksComponent } from '../sort-tasks/sort-tasks.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @Component({
@@ -23,7 +25,9 @@ import { SortTasksComponent } from '../sort-tasks/sort-tasks.component';
     TaskItemComponent, 
     AddTaskComponent, 
     MatDialogModule,
-    SortTasksComponent
+    SortTasksComponent,
+    MatButtonModule,
+    MatIconModule
   ],
   templateUrl: './tasks.component.html',
   styleUrls: ['./tasks.component.css']
@@ -110,5 +114,18 @@ export class TasksComponent {
       );
     }
   }
-  
+
+  openAddTaskDialog() {
+    const dialogRef = this.dialog.open(AddTaskComponent, {
+      width: '550px',
+      data: {},
+      panelClass: 'add-task-dialog-container'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.addTask(result); // Add the new task to the list
+      }
+    });
+  }
 }

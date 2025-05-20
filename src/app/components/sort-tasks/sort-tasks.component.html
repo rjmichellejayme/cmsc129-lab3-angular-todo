@@ -1,12 +1,11 @@
 <hr class="section-divider">
 <div class="sort-container"> 
-    <mat-form-field appearance="outline" class="sort-dropdown">
-        <mat-label>Sort by</mat-label>
-        <mat-select (selectionChange)="onSortChange($event.value)">
-          <mat-option *ngFor="let option of sortOptions" [value]="option.value">
-            {{ option.label }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      
+  <div class="form-control">
+    <label for="sortBy" class="priority-label">Sort by</label>
+    <select id="sortBy" class="priority" (change)="onSortChange($any($event.target).value)">
+      <option *ngFor="let option of sortOptions" [value]="option.value">
+        {{ option.label }}
+      </option>
+    </select>
+  </div>
 </div>

@@ -1,4 +1,3 @@
-<app-add-task (onAddTask)="addTask($event)"></app-add-task>
 <app-sort-tasks (sortChange)="onSortChange($event)"></app-sort-tasks>
 
 <app-task-item 
@@ -8,3 +7,7 @@
   (onToggleReminder)="toggleComplete(task)"
   (onEditTask)="editTask($event)">
 </app-task-item>
+
+<button mat-fab color="primary" class="add-task-fab" (click)="openAddTaskDialog()">
+  <mat-icon>add</mat-icon>
+</button>

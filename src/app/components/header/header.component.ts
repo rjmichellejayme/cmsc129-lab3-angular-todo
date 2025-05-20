@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 })
 
 export class HeaderComponent {
-  title: string = 'To Do';
+  title: string = 'My To Do List';
 
   
 }

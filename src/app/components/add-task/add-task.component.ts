@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule, provideNativeDateAdapter } from '@angular/material/core';
 import { TaskFormComponent } from '../task-form/task-form.component';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-task',
@@ -38,6 +39,8 @@ export class AddTaskComponent {
     time: ''
   };
 
+  constructor(private dialogRef: MatDialogRef<AddTaskComponent>) {}
+
   onSubmit(task: Task) {
     if (!task.text) {
       alert('Please enter a task!');
@@ -58,18 +61,8 @@ export class AddTaskComponent {
       priority: this.taskData.priority,
       dateAdded: new Date().toISOString() 
     };
-  
 
-    
-    this.onAddTask.emit(newTask);
-
-    this.taskData = {
-      id: '',
-      text: '',
-      day: '',
-      completed: false,
-      priority: 'Low',
-      time: '',
-    };
+    console.log('Attempting to close dialog with task:', newTask);
+    this.dialogRef.close(newTask);
   }
 }

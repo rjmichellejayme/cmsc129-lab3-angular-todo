@@ -1,0 +1,53 @@
+:host {
+  display: block;
+  position: relative; /* Needed for z-index to work correctly */
+}
+
+.add-task-fab {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.add-task-dialog-container {
+  padding: 20px; /* Add padding to the dialog container */
+}
+
+.add-task-dialog-container .mat-dialog-actions {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.add-task-dialog-container .cancel-btn {
+  padding: 8px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  background-color: #f44336;
+  color: white;
+}
+
+.add-task-dialog-container .cancel-btn:hover {
+  background-color: #d32f2f;
+}
+
+.add-task-dialog-container .save-btn {
+  padding: 10px 24px !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 16px !important;
+  background-color: #3f51b5 !important; /* Blue color for save button */
+  color: white !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s !important;
+}
+
+.add-task-dialog-container .save-btn:hover {
+  background-color: #303f9f !important; /* Darker blue on hover */
+}
